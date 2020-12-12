@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hello, World</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            height: 100%
+        }
+    </style>
+    <!-- <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=ggK6jwpcQPfZefk1haUes9GyQvBACbQW">
+        </script> -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=ggK6jwpcQPfZefk1haUes9GyQvBACbQW">
+    </script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script type="text/javascript">
+        const mp = new BMap.Map("container");
+        // 创建地图实例 
+        const point = new BMap.Point(116.727761, 23.36609);
+        // 创建点坐标 
+        mp.centerAndZoom(point, 17);
+        mp.addControl(new BMap.CityListControl({
+            anchor: BMAP_ANCHOR_TOP_LEFT,
+            offset: new BMap.Size(10, 20),
+        }));
+        const top_right_navigation = new BMap.NavigationControl({
+            anchor: BMAP_ANCHOR_TOP_RIGHT,
+            offset: new BMap.Size(10, 30),
+        }); //右上角，仅包含平移和缩放按钮
+        mp.addControl(top_right_navigation)
+        mp.addControl(new BMap.GeolocationControl({
+            anchor: BMAP_ANCHOR_TOP_RIGHT,
+            offset: new BMap.Size(10, 120)
+        }))
+    </script>
+</body>
+
+</html>
