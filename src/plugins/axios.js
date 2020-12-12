@@ -10,8 +10,6 @@ let config = {
   baseURL: process.env.VUE_APP_BASE_URL || ""
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
-  // baseURL: 'http://rap2.taobao.org:38080/app/mock/256756',
-
 };
 
 const _axios = axios.create(config);

@@ -31,11 +31,11 @@ const _bottomNavData = [
 ]
 
 const firRenderBN = () => {
-  let lo = window.localStorage.getItem("showMaps")
-  if (lo === null) {
-    lo = window.localStorage.setItem("showMaps", true)
+  let lo = () => window.localStorage.getItem("showMaps")
+  if (lo() === null) {
+    window.localStorage.setItem("showMaps", true)
   }
-  return JSON.parse(lo)
+  return JSON.parse(lo())
 }
 
 export default new Vuex.Store({
