@@ -29,7 +29,7 @@
             :style="{
               backgroundImage: `url(${slide.src})`,
               backgroundSize: 'cover',
-              backgroundPosition: `${slide.position}`,
+              backgroundPosition: `50% 50%`,
               width: '100%',
             }"
           ></div>
@@ -74,7 +74,8 @@ export default {
     return {
       slides: [],
       sliderIndex: 0,
-      LoopTime: 3500,
+      // LoopTime: 3500,
+      LoopTime: 350000,
     }
   },
   computed: {

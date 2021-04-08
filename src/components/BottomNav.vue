@@ -4,9 +4,13 @@
     app
     grow
     active-class="BNactive"
-    class="elevation-2"
+    class="elevation-2 mx-w-650px"
     :input-value="true"
     v-show="ifFirRen"
+    :style="{
+      position:'sticky',
+      bottom:0    
+    }"
   >
     <v-btn
       height="100%"
